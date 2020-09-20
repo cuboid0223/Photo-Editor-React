@@ -1,0 +1,98 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
+      grid-template-areas: "image sidebar" "slider sidebar";
+  height: 100vh;
+  width: 100vw;
+  background-color: #DADADA;
+}
+
+.main-image {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: image;
+  background-image: url("https://images.unsplash.com/photo-1571645639045-a3d43f4cafc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80");
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.slider-container {
+  grid-area: "slider";
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.slider-container .slider {
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: sidebar;
+  background-color: #d5b8ff;
+  border-left: 1px solid #7c1fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.sidebar__item {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #d5b8ff;
+  padding: 1rem;
+  position: relative;
+  -webkit-transition: background-color 150ms;
+  transition: background-color 150ms;
+}
+
+.sidebar__item:hover, .sidebar__item:focus {
+  background-color: #b885ff;
+}
+
+.sidebar__item::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 0;
+  height: 1px;
+  background-color: #6200eb;
+}
+
+.sidebar__item:last-child:after {
+  display: none;
+}
+
+.active {
+  background-color: #a666ff;
+}
+/*# sourceMappingURL=all.css.map */
